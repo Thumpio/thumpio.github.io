@@ -4,3 +4,12 @@
 
 - name: "Dreaming in Daylight"
   order: 1
+
+- name: "Another Town"
+  order: 2
+
+- name: "Paper Mache"
+  order: 3
+
+- name: "Taking Long Showers"
+  order: 4
