@@ -1,0 +1,80 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  extensions: [png, jpg, jpeg, webp, gif, mp3, ogg, wav, flac]
+
+content:
+  - name: thoughts
+    label: Thoughts / blog
+    type: collection
+    path: _posts
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: title
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: songs
+    label: Songs and lyrics
+    type: collection
+    path: _songs
+    filename:
+      template: "{primary}.md"
+      field: title
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Song title
+        type: string
+        required: true
+      - name: date
+        label: Release / publish date
+        type: date
+      - name: album
+        label: Album / release
+        type: string
+      - name: track
+        label: Track number
+        type: number
+      - name: preview_mp3
+        label: Preview MP3 URL
+        type: string
+      - name: preview_ogg
+        label: Preview OGG URL
+        type: string
+      - name: preview_wav
+        label: Preview WAV URL
+        type: string
+      - name: bandcamp_url
+        label: Bandcamp URL
+        type: string
+      - name: spotify_url
+        label: Spotify URL
+        type: string
+      - name: youtube_url
+        label: YouTube URL
+        type: string
+      - name: soundcloud_url
+        label: SoundCloud URL
+        type: string
+      - name: bandcamp_embed_url
+        label: Bandcamp embed URL
+        type: string
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: lyrics
+        label: Lyrics
+        type: text

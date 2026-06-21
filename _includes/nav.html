@@ -1,0 +1,8 @@
+<nav class="nav-cloud" aria-label="main sections">
+  <a {% if page.nav == "home" %}class="active"{% endif %} href="{{ '/' | relative_url }}">home</a>
+  <a {% if page.nav == "bio" %}class="active"{% endif %} href="{{ '/bio/' | relative_url }}">bio</a>
+  <a {% if page.nav == "thoughts" %}class="active"{% endif %} href="{{ '/thoughts/' | relative_url }}">thoughts</a>
+  <a {% if page.nav == "songs" %}class="active"{% endif %} href="{{ '/songs/' | relative_url }}">songs</a>
+  <a {% if page.nav == "lyrics" %}class="active"{% endif %} href="{{ '/lyrics/' | relative_url }}">lyrics</a>
+  <a {% if page.nav == "cool" %}class="active"{% endif %} href="{{ '/cool-music/' | relative_url }}">cool music</a>
+</nav>

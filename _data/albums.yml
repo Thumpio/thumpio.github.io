@@ -1,0 +1,6 @@
+# Controls the manual order of album/release groups on /songs/.
+# The `name` value must match the `album` field in the matching song files.
+# Smaller `order` numbers appear first.
+
+- name: "blue to the pop"
+  order: 1

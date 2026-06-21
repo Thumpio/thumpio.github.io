@@ -1,69 +1,44 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thumpi - home</title>
-  <meta name="description" content="A small old-school landing page for Thumpi.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="theme-home">
-  <div class="page">
-    <header class="site-head">
-  <p class="tiny-note">last updated: 06-06-2026</p>
-  <h1 class="hero-title" aria-label="Thumpi"><span>T</span>humpi</h1>
-  <p class="tagline">A website full of everything Thumpi.</p>
-  <div class="hero-embed" aria-label="Thumpi Spotify artist embed">
-    <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/artist/3N4KMSBGf8lmOPuNRxXEVy?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Thumpi on Spotify"></iframe>
-  </div>
-</header>
+---
+layout: default
+title: home
+nav: home
+theme: theme-home
+hero_title: Thumpi
+tiny_note: "last updated: 06-06-2026"
+tagline: "A website full of everything Thumpi."
+spotify_embed_url: "https://open.spotify.com/embed/artist/3N4KMSBGf8lmOPuNRxXEVy?utm_source=generator"
+---
+<main class="home-grid">
+  <section class="panel">
+    <h2>home</h2>
+    <p>
+      This is the home of the world renowned indie rock sensation Thumpi, a one-person project of original compositions, lyrics, and other fun stuff and things.
+    </p>
+    <p class="placeholder">
+      New YouTube uploads every "whenever I feel like it" and new music whenever I write it.
+    </p>
 
-    <nav class="nav-cloud" aria-label="main sections">
-  <a class="active" href="index.html">home</a>
-  <a href="bio.html">bio</a>
-  <a href="thoughts.html">thoughts</a>
-  <a href="songs.html">songs</a>
-  <a href="lyrics.html">lyrics</a>
-  <a href="cool-music.html">cool music</a>
-</nav>
+    {% assign latest_song = site.songs | sort: "date" | reverse | first %}
+    {% if latest_song %}
+      <div class="latest-song">
+        <h3>latest song</h3>
+        <p><a href="{{ latest_song.url | relative_url }}">{{ latest_song.title }}</a></p>
+        {% include song-player.html song=latest_song show_missing=false %}
+      </div>
+    {% endif %}
+  </section>
 
-    <div class="ticker" aria-label="scrolling site message">
-  <div class="ticker-track">
-    <span>welcome to the thumpi home page • blue to the pop • more updates to the site soon • </span>
-    <span aria-hidden="true">welcome to the thumpi home page • blue to the pop • more updates to the site soon • </span>
-    <span aria-hidden="true">welcome to the thumpi home page • blue to the pop • more updates to the site soon • </span>
-  </div>
-</div>
-
-    <main class="home-grid">
-      <section class="panel">
-        <h2>home</h2>
-        <p>
-          This is the home of the world renowned indie rock sensation Thumpi, a one-person project of original compositions, lyrics, and other fun stuff and things.
-        </p>
-        <p class="placeholder">
-          New YouTube uploads every "whenever I feel like it" and new music whenever I write it.
-        </p>
-      </section>
-
-      <aside class="panel socials-panel">
-        <h2>socials</h2>
-        <p>Here is everywhere you could ever want to find or contact me.</p>
-        <div class="social-buttons" aria-label="social links">
-          <a href="https://thumpi.bandcamp.com/">Bandcamp</a>
-          <a href="https://www.youtube.com/@thumpi">YouTube</a>
-          <a href="https://open.spotify.com/artist/3N4KMSBGf8lmOPuNRxXEVy?si=zCxufaFbQUedQ5R972cJzw">Spotify</a>
-          <a href="https://x.com/Thumpio">Twitter (X)</a>
-          <a href="https://bsky.app/profile/thumpi.me">Bluesky</a>
-          <a href="https://soundcloud.com/thumpi_music">SoundCloud</a>
-          <a href="mailto:thumpi.music@gmail.com">email</a>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-  should be viewed on a computer unless you are a dweeb • no trackers • no bullshit • made with love :)
-</footer>
-  </div>
-</body>
-</html>
+  <aside class="panel socials-panel">
+    <h2>socials</h2>
+    <p>Here is everywhere you could ever want to find or contact me.</p>
+    <div class="social-buttons" aria-label="social links">
+      <a href="https://thumpi.bandcamp.com/">Bandcamp</a>
+      <a href="https://www.youtube.com/@thumpi">YouTube</a>
+      <a href="https://open.spotify.com/artist/3N4KMSBGf8lmOPuNRxXEVy?si=zCxufaFbQUedQ5R972cJzw">Spotify</a>
+      <a href="https://x.com/Thumpio">Twitter (X)</a>
+      <a href="https://bsky.app/profile/thumpi.me">Bluesky</a>
+      <a href="https://soundcloud.com/thumpi_music">SoundCloud</a>
+      <a href="mailto:thumpi.music@gmail.com">email</a>
+    </div>
+  </aside>
+</main>

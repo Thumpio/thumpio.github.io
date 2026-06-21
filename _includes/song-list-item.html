@@ -1,0 +1,14 @@
+{% assign song = include.song %}
+<li class="song-card album-song-card">
+  <h3>
+    {% if song.track %}<span class="track-number">{{ song.track }}.</span>{% endif %}
+    <a href="{{ song.url | relative_url }}">{{ song.title }}</a>
+  </h3>
+
+  <p class="song-meta">
+    {% if song.album %}<span>{{ song.album }}</span>{% else %}<span>non-album track</span>{% endif %}
+    {% if song.date %}<span>{{ song.date | date: "%d-%m-%Y" }}</span>{% endif %}
+  </p>
+
+  {% include song-player.html song=song show_missing=true %}
+</li>

@@ -1,81 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thumpi - lyrics</title>
-  <meta name="description" content="A small old-school landing page for Thumpi.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="theme-lyrics">
-  <div class="page">
-    <header class="site-head">
-  <p class="tiny-note">section: to put it into words</p>
-  <h1 class="hero-title" aria-label="lyrics">lyrics</h1>
-  <p class="tagline">This is where you will find the lyrics for the words I sing.</p>
+---
+layout: default
+title: lyrics
+nav: lyrics
+theme: theme-lyrics
+hero_title: lyrics
+tiny_note: "section: to put it into words"
+tagline: "This is where you will find the lyrics for the words I sing."
+---
+<main>
+  <section class="panel">
+    <h2>lyrics</h2>
 
-</header>
-    <nav class="nav-cloud" aria-label="main sections">
-  <a href="index.html">home</a>
-  <a href="bio.html">bio</a>
-  <a href="thoughts.html">thoughts</a>
-  <a href="songs.html">songs</a>
-  <a class="active" href="lyrics.html">lyrics</a>
-  <a href="cool-music.html">cool music</a>
-</nav>
-    <div class="ticker" aria-label="scrolling site message">
-  <div class="ticker-track">
-    <span>welcome to the thumpi home page • blue to the pop • more updates to the site soon • </span>
-    <span aria-hidden="true">welcome to the thumpi home page • blue to the pop • more updates to the site soon • </span>
-    <span aria-hidden="true">welcome to the thumpi home page • blue to the pop • more updates to the site soon • </span>
-  </div>
-</div>
-    <main>
-      <section class="panel">
-        <h2>lyrics</h2>
-        <article class="lyrics-entry" id="curtain-calls-dont-applaud-themselves">
-          <h3>Curtain Calls Don't Applaud Themselves</h3>
-          <div class="lyrics-box">Call this romance a dress rehearsal
-If the audience never shows
-
-You look good in anything, even the air
-Your palms tell me a tale too good to be true
-You love all of my jokes
-But you smile like you’ve heard the punchline, before I fuck it up
-
-You lack a habit of seeing my flaws for what they are
-You've got a mouth but you are unable to scream
-
-You say "I love you" sotto voce, I'd yell it back if I could
-I'd give everything to hear you sing
-If I were a real man I'd see this for what it is
-
-Your coat still claims the back of my chair, like it paid rent to be there
-My friends ask I dodge the questions
-You never fight, you never flinch, so what do they need to know?
-
-You say "I love you" sotto voce, I'd yell it back if I could
-I swear you’re dancing down the hallway
-But I never hear the floorboards creak
-I'd give everything to hear you sing
-If I were a real man I'd see this for what it is
-
-You're so out of touch, I'm so out of line
-You're so hard to reach, I can't handle basic speech
-You're so real to me, to be or not to be
-
-I would pay you to tell me, “shut your stupid mouth”
-’Cause anything thing you say is as soothing as the rain
-But you just smile and let me ramble
-You say "I love you" sotto voce, I'd yell it back if I could
-
-So take a rest inside my head, where the lighting's always right</div>
-        </article>
-      </section>
-    </main>
-    <footer>
-  should be viewed on a computer unless you are a dweeb • no trackers • no bullshit • made with love :)
-</footer>
-  </div>
-</body>
-</html>
+    {% assign songs = site.songs | sort: "title" %}
+    {% if songs.size > 0 %}
+      {% for song in songs %}
+        {% unless song.published == false %}
+          <article class="lyrics-entry" id="{{ song.slug }}">
+            <h3><a href="{{ song.url | relative_url }}">{{ song.title }}</a></h3>
+            {% if song.lyrics %}
+              <div class="lyrics-box">{{ song.lyrics | escape | newline_to_br }}</div>
+            {% else %}
+              <p class="placeholder">lyrics not added yet.</p>
+            {% endif %}
+          </article>
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+      <p class="placeholder">No lyrics added yet.</p>
+    {% endif %}
+  </section>
+</main>

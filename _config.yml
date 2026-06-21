@@ -1,0 +1,35 @@
+title: Thumpi
+description: A small old-school website for Thumpi.
+url: "https://thumpi.me"
+baseurl: ""
+
+collections:
+  songs:
+    output: true
+    permalink: /songs/:name/
+
+permalink: /thoughts/:year/:month/:day/:title/
+
+# These defaults keep the editable Markdown files small.
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      theme: theme-thoughts
+      nav: thoughts
+      hero_title: thoughts
+      tiny_note: "section: the things I come up with"
+      tagline: "Stuff from the recesses of my mind."
+  - scope:
+      path: ""
+      type: "songs"
+    values:
+      layout: song
+      theme: theme-songs
+      nav: songs
+      hero_title: songs
+      tiny_note: "section: original music songs"
+      tagline: "A catalog and taste of original noise done by yours truly."
+      published: true

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<main>
+  <article class="panel song-detail">
+    <h2>{{ page.title }}</h2>
+
+    <p class="song-meta">
+      {% if page.album %}<span>release: {{ page.album }}</span>{% else %}<span>non-album track</span>{% endif %}
+      {% if page.track %}<span>track: {{ page.track }}</span>{% endif %}
+      {% if page.date %}<span>date: {{ page.date | date: "%d-%m-%Y" }}</span>{% endif %}
+    </p>
+
+    {% include song-player.html song=page show_missing=true %}
+
+    {% if page.lyrics %}
+      <h3>lyrics</h3>
+      <div class="lyrics-box">{{ page.lyrics | escape | newline_to_br }}</div>
+    {% else %}
+      <p class="placeholder">lyrics not added yet.</p>
+    {% endif %}
+
+    {% if content contains "<p>" or content contains "<h" %}
+      <div class="song-notes">
+        <h3>notes</h3>
+        {{ content }}
+      </div>
+    {% endif %}
+
+    <p class="back-link"><a href="{{ '/songs/' | relative_url }}">back to songs</a></p>
+  </article>
+</main>
