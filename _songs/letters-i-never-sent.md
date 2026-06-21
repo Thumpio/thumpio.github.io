@@ -3,6 +3,7 @@ title: Letters I Never Sent
 date: 2026-05-20
 album: Dreaming in Daylight
 track: 6
+preview_mp3: https://assets.susybaka.dev/share/thumpi/letters_i_never_sent.mp3
 published: true
 lyrics: |-
   I've written this a thousand times before but never like this
