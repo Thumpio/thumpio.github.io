@@ -12,33 +12,68 @@ tagline: "A catalog and taste of original noise done by yours truly."
     <h2>songs</h2>
     <p>Each song can have an external preview MP3, links, and a lyrics page. Audio files are meant to live outside GitHub, for example on the public file server.</p>
 
-    {% assign songs = site.songs | where_exp: "song", "song.published != false" %}
-    {% assign albums = site.data.albums | default: empty | sort: "order" %}
+    {% assign albums = site.data.albums | sort: "order" %}
 
-    {% if songs.size > 0 %}
+    {% capture album_names %}
+      |{% for album in albums %}{{ album.name }}|{% endfor %}
+    {% endcapture %}
+
+    {% capture rendered_song_sections %}
+      {% comment %}
+        Albums are shown in the manual order defined in _data/albums.yml.
+        Songs inside albums are sorted by their song front matter "track" value.
+      {% endcomment %}
       {% for album in albums %}
-        {% assign album_songs = songs | where: "album", album.name | sort: "track" %}
-        {% if album_songs.size > 0 %}
+        {% assign album_sorted_songs = site.songs | sort: "track" %}
+
+        {% capture album_items %}
+          {% for song in album_sorted_songs %}
+            {% if song.published != false and song.album == album.name %}
+              {% include song-list-item.html song=song %}
+            {% endif %}
+          {% endfor %}
+        {% endcapture %}
+
+        {% assign album_items_clean = album_items | strip %}
+
+        {% if album_items_clean != "" %}
           <section class="album-group" id="{{ album.name | slugify }}">
             <h3 class="album-title">{{ album.name }}</h3>
-            {% if album.description %}<p class="album-description">{{ album.description }}</p>{% endif %}
+
+            {% if album.description %}
+              <p class="album-description">{{ album.description }}</p>
+            {% endif %}
+
             <ol class="song-list song-cards album-song-list">
-              {% for song in album_songs %}
-                {% include song-list-item.html song=song %}
-              {% endfor %}
+              {{ album_items }}
             </ol>
           </section>
         {% endif %}
       {% endfor %}
 
-      {% assign loose_songs = songs | where_exp: "song", "song.album == nil or song.album == ''" | sort: "date" | reverse %}
-      {% if loose_songs.size > 0 %}
+      {% comment %}
+        Songs with no album value are shown as non-album tracks.
+      {% endcomment %}
+      {% assign date_sorted_songs = site.songs | sort: "date" | reverse %}
+
+      {% capture loose_items %}
+        {% for song in date_sorted_songs %}
+          {% if song.published != false %}
+            {% if song.album == nil or song.album == "" %}
+              {% include song-list-item.html song=song %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% assign loose_items_clean = loose_items | strip %}
+
+      {% if loose_items_clean != "" %}
         <section class="album-group" id="non-album-tracks">
           <h3 class="album-title">non-album tracks</h3>
+
           <ol class="song-list song-cards album-song-list">
-            {% for song in loose_songs %}
-              {% include song-list-item.html song=song %}
-            {% endfor %}
+            {{ loose_items }}
           </ol>
         </section>
       {% endif %}
@@ -47,31 +82,41 @@ tagline: "A catalog and taste of original noise done by yours truly."
         Safety fallback: if a song has an album value that is not listed in _data/albums.yml,
         show it here instead of silently hiding it from the songs page.
       {% endcomment %}
-      {% assign album_names = albums | map: "name" %}
-      {% assign has_unlisted = false %}
-      {% for song in songs %}
-        {% if song.album and song.album != "" %}
-          {% unless album_names contains song.album %}
-            {% assign has_unlisted = true %}
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
+      {% capture unlisted_items %}
+        {% for song in date_sorted_songs %}
+          {% if song.published != false %}
+            {% if song.album and song.album != "" %}
+              {% assign album_lookup = song.album | prepend: "|" | append: "|" %}
 
-      {% if has_unlisted %}
+              {% unless album_names contains album_lookup %}
+                {% include song-list-item.html song=song %}
+              {% endunless %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% assign unlisted_items_clean = unlisted_items | strip %}
+
+      {% if unlisted_items_clean != "" %}
         <section class="album-group" id="unlisted-releases">
           <h3 class="album-title">other releases</h3>
-          <p class="album-description">These songs have an album name, but that album has not been added to <code>_data/albums.yml</code> yet.</p>
+
+          <p class="album-description">
+            These songs have an album name, but that album has not been added to <code>_data/albums.yml</code> yet.
+          </p>
+
           <ol class="song-list song-cards album-song-list">
-            {% for song in songs %}
-              {% if song.album and song.album != "" %}
-                {% unless album_names contains song.album %}
-                  {% include song-list-item.html song=song %}
-                {% endunless %}
-              {% endif %}
-            {% endfor %}
+            {{ unlisted_items }}
           </ol>
         </section>
       {% endif %}
+    {% endcapture %}
+
+    {% assign rendered_song_sections_clean = rendered_song_sections | strip %}
+
+    {% if rendered_song_sections_clean != "" %}
+      {{ rendered_song_sections }}
     {% else %}
       <p class="placeholder">No songs added yet.</p>
     {% endif %}
