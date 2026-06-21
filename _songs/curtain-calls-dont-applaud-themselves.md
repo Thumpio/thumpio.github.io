@@ -1,16 +1,10 @@
 ---
-title: "Curtain Calls Don't Applaud Themselves"
+title: Curtain Calls Don't Applaud Themselves
 date: 2026-06-06
-album: "blue to the pop"
-track: 1
-preview_mp3: "https://assets.susybaka.dev/share/thumpi/curtain_calls_dont_applaud_themselves_demo_maybe.mp3"
-preview_ogg: ""
-preview_wav: ""
-bandcamp_url: "https://thumpi.bandcamp.com/"
-spotify_url: ""
-youtube_url: ""
-soundcloud_url: ""
-bandcamp_embed_url: ""
+album: Dreaming in Daylight
+track: 8
+preview_mp3: https://assets.susybaka.dev/share/thumpi/curtain_calls_dont_applaud_themselves_demo_maybe.mp3
+bandcamp_url: https://thumpi.bandcamp.com/
 published: true
 lyrics: |
   Call this romance a dress rehearsal
