@@ -4,6 +4,8 @@ date: 2024-09-26
 album: Paper Mache
 track: 4
 preview_mp3: https://assets.susybaka.dev/share/thumpi/underneath_the_rowan_tree.mp3
+bandcamp_url: https://thumpi.bandcamp.com/track/underneath-the-rowan-tree
+youtube_url: https://youtu.be/9OuJB7pE1qo?si=V3AJL47e8Cd8VD9x
 published: true
 lyrics: |-
   When I turn 75 I'm gonna flee
