@@ -4,7 +4,8 @@ date: 2026-06-06
 album: Dreaming in Daylight
 track: 8
 preview_mp3: https://assets.susybaka.dev/share/thumpi/curtain_calls_dont_applaud_themselves_demo_maybe.mp3
-bandcamp_url: https://thumpi.bandcamp.com/
+bandcamp_url: https://thumpi.bandcamp.com/track/curtain-calls-dont-applaud-themselves
+youtube_url: https://youtu.be/c6x3dsZ1P6g?si=d2bM8q8p1Zd-PTUt
 published: true
 lyrics: |
   Call this romance a dress rehearsal
