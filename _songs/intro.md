@@ -4,6 +4,8 @@ date: 2024-09-26
 album: Paper Mache
 track: 1
 preview_mp3: https://assets.susybaka.dev/share/thumpi/intro.mp3
+bandcamp_url: thumpi.bandcamp.com/track/intro
+youtube_url: https://youtu.be/9OuJB7pE1qo?si=ghx6GGKHt96_U7Ud
 published: true
 lyrics: |-
   Oh, you are the one
