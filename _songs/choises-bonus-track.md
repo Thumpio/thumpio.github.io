@@ -1,5 +1,5 @@
 ---
-title: Choises (Bonus Track)
+title: Choices (Bonus Track)
 date: 2026-01-31
 album: Paper Mache
 track: 14
