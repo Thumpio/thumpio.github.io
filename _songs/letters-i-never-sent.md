@@ -4,6 +4,8 @@ date: 2026-05-20
 album: Dreaming in Daylight
 track: 6
 preview_mp3: https://assets.susybaka.dev/share/thumpi/letters_i_never_sent.mp3
+bandcamp_url: https://thumpi.bandcamp.com/track/letters-i-never-sent
+youtube_url: https://youtu.be/S14HC0STwT8?si=1EhYcfYnDtA_g-Pv
 published: true
 lyrics: |-
   I've written this a thousand times before but never like this
