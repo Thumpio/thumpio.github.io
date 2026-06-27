@@ -3,6 +3,7 @@ title: Choises (Bonus Track)
 date: 2026-01-31
 album: Paper Mache
 track: 14
+preview_mp3: https://assets.susybaka.dev/share/thumpi/choices.mp3
 bandcamp_url: https://thumpi.bandcamp.com/track/choices
 published: true
 lyrics: >-
