@@ -1,5 +1,5 @@
 ---
-title: How I Wept In E Major
+title: How I Wept in E Major
 date: 2024-09-26
 album: Paper Mache
 track: 2
