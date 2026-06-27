@@ -3,6 +3,7 @@ title: Nearly There
 date: 2026-06-24
 album: Dreaming in Daylight
 track: 5
+preview_mp3: https://assets.susybaka.dev/share/thumpi/nearly_there.mp3
 published: true
 lyrics: |-
   For a brief time she thought the world was gonna end
