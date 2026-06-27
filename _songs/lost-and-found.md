@@ -1,6 +1,6 @@
 ---
 title: Lost & Found
-date: 2026-06-27
+date: 2024-09-26
 album: Paper Mache
 track: 5
 preview_mp3: https://assets.susybaka.dev/share/thumpi/lost_and_found.mp3
