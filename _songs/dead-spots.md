@@ -1,6 +1,7 @@
 ---
 title: Dead Spots
 date: 2023-10-23
+preview_mp3: https://assets.susybaka.dev/share/thumpi/dead_spots.mp3
 bandcamp_url: https://thumpi.bandcamp.com/album/dead-spots
 youtube_url: https://youtu.be/aDoi-yYyHvU?si=ilBWfXtGRb85BtuH
 published: true
