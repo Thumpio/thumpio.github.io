@@ -4,6 +4,8 @@ date: 2024-09-26
 album: Paper Mache
 track: 2
 preview_mp3: https://assets.susybaka.dev/share/thumpi/how_i_wept_in_e_major.mp3
+bandcamp_url: thumpi.bandcamp.com/track/how-i-wept-in-e-major
+youtube_url: https://youtu.be/9OuJB7pE1qo?si=dTRt1_4rgqorz_l3
 published: true
 lyrics: |-
   Gray skies, knees firmly together
