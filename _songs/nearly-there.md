@@ -4,6 +4,8 @@ date: 2026-06-24
 album: Dreaming in Daylight
 track: 5
 preview_mp3: https://assets.susybaka.dev/share/thumpi/nearly_there.mp3
+bandcamp_url: https://thumpi.bandcamp.com/track/nearly-there
+youtube_url: https://youtu.be/2u77ihi5fao?si=wR3PCSjSkBVFYqdC
 published: true
 lyrics: |-
   For a brief time she thought the world was gonna end
