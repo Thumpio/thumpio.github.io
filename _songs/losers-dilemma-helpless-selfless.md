@@ -3,6 +3,7 @@ title: Loser's Dilemma / Helpless, Selfless
 date: 2024-09-26
 album: Paper Mache
 track: 12
+preview_mp3: https://assets.susybaka.dev/share/thumpi/losers_dilemma.mp3
 bandcamp_url: https://thumpi.bandcamp.com/track/losers-dilemma-helpless-selfless
 youtube_url: https://youtu.be/9OuJB7pE1qo?si=V3AJL47e8Cd8VD9x
 published: true
