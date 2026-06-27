@@ -1,6 +1,11 @@
 ---
 title: The World Is Yours
-date: 2026-06-27
+date: 2024-09-26
+album: Paper Mache
+track: 6
+preview_mp3: https://assets.susybaka.dev/share/thumpi/the_world_is_yours.mp3
+bandcamp_url: https://thumpi.bandcamp.com/track/the-world-is-yours
+youtube_url: https://youtu.be/9OuJB7pE1qo?si=V3AJL47e8Cd8VD9x
 published: true
 lyrics: >-
   "It's a very special thing to not have a care in the world, and she was that
