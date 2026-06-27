@@ -4,6 +4,8 @@ date: 2024-09-26
 album: Paper Mache
 track: 3
 preview_mp3: https://assets.susybaka.dev/share/thumpi/song_for_emily.mp3
+bandcamp_url: https://thumpi.bandcamp.com/track/song-for-emily
+youtube_url: https://youtu.be/9OuJB7pE1qo?si=dTRt1_4rgqorz_l3
 published: true
 lyrics: |-
   A mask of paper mache made from the advertisements you sold
